@@ -1,0 +1,12 @@
+--- origsrc/twitter-glib-0.9.8/build/autotools/dolt.m4	2009-03-14 19:23:35.000000000 -0500
++++ src/twitter-glib-0.9.8/build/autotools/dolt.m4	2010-01-24 04:44:16.371915400 -0600
+@@ -26,6 +26,9 @@ i?86-*-linux*|x86_64-*-linux*|powerpc-*-
+ |amd64-*-freebsd*|i?86-*-freebsd*|ia64-*-freebsd*)
+     pic_options='-fPIC'
+     ;;
++i?86-pc-cygwin*)
++    pic_options='-DDLL_EXPORT'
++    ;;
+ i?86-apple-darwin*)
+     pic_options='-fno-common'
+     ;;

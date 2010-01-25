@@ -1,0 +1,9 @@
+category: Net
+requires: libgcc1 libgdk_pixbuf2.0_0 libglib2.0_0 libjson-glib1.0_0 libsoup2.4_1 libsoup-gnome2.4_1
+external-source: twitter-glib
+sdesc: "GObject library for Twitter microblogging service (runtime)"
+ldesc: "Twitter-GLib is a GObject-based C wrapper library around the 
+(almost-) RESTful web API provided by Twitter. Twitter-GLib provides an 
+object-oriented API around the webservice methods and data structures, 
+and allows writing clients for Twitter and all the web services offering 
+a Twitter-compatible API, like Identi.ca."

@@ -1,0 +1,12 @@
+inherit gnome2
+
+DESCRIPTION="GObject library for Twitter microblogging service"
+HOMEPAGE="http://live.gnome.org/TwitterGlib"
+SRC_URI="http://www.gnome.org/~ebassi/source/${P}.tar.gz"
+PATCH_URI="0.9.8-autotools.patch
+           0.9.8-dolt.patch"
+
+PKG_NAMES="${PN} lib${PN}1.0_0 lib${PN}1.0-devel girepository-Twitter1.0"
+libtwitter_glib1_0_0_CONTENTS="usr/bin/*-1.0-0.dll usr/share/doc/"
+libtwitter_glib1_0_devel_CONTENTS="--exclude=gir*1.0 usr/include/ usr/lib/ usr/share/gtk-doc/"
+girepository_Twitter1_0_CONTENTS="usr/*/gir*-1.0/Twitter-1.0.*"

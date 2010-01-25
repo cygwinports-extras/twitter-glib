@@ -1,0 +1,30 @@
+--- origsrc/twitter-glib-0.9.8/configure.ac	2009-05-01 11:13:40.000000000 -0500
++++ src/twitter-glib-0.9.8/configure.ac	2010-01-24 04:17:42.107728700 -0600
+@@ -142,7 +142,7 @@ AC_ARG_ENABLE([maintainer-flags],
+               [],
+               [enable_maintainer_flags=maintainer_flags_default])
+ 
+-AS_IF([test "x$enable_maintainer_flags" = "xyes" && test "x$GCC" = "xyes"]
++AS_IF([test "x$enable_maintainer_flags" = "xyes" && test "x$GCC" = "xyes"],
+       [TWITTER_MAINTAINER_CFLAGS="-Werror -Wall -Wshadow -Wcast-align -Wno-uninitialized -Wempty-body -Wformat-security -Winit-self"]
+ )
+ 
+--- origsrc/twitter-glib-0.9.8/twitter-glib/Makefile.am	2009-05-01 04:53:25.000000000 -0500
++++ src/twitter-glib-0.9.8/twitter-glib/Makefile.am	2010-01-24 04:43:16.648499500 -0600
+@@ -106,6 +106,7 @@ libtwitter_glib_@TWITTER_API_VERSION@_la
+ 	$(TWITTER_GLIB_LT_LDFLAGS) 		\
+ 	-export-dynamic 			\
+ 	-export-symbols-regex "^twitter.*" 	\
++	-no-undefined				\
+ 	-rpath $(libdir) 			\
+ 	$(NULL)
+ 
+@@ -139,7 +140,7 @@ Twitter-@TWITTER_API_VERSION@.gir: $(INT
+ 		--include=GObject-2.0 \
+ 		--include=Soup-2.4 \
+ 		--include=GdkPixbuf-2.0 \
+-		--library=twitter-glib-@TWITTER_API_VERSION@ \
++		--library=libtwitter-glib-@TWITTER_API_VERSION@.la \
+ 		--libtool="$(top_builddir)/doltlibtool" \
+ 		--pkg gobject-2.0 \
+ 		--pkg libsoup-2.4 \
